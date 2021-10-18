@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71AEC33D271DDE3C001EC019 /* Configuration.yml in Resources */ = {isa = PBXBuildFile; fileRef = 71AEC33C271DDE3C001EC019 /* Configuration.yml */; };
+		71AEC340271DDECE001EC019 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71AEC33F271DDECE001EC019 /* Localizable.strings */; };
 		71F34233271DD2FB004100FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F34232271DD2FB004100FC /* AppDelegate.swift */; };
 		71F34235271DD2FB004100FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F34234271DD2FB004100FC /* SceneDelegate.swift */; };
 		71F34237271DD2FB004100FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F34236271DD2FB004100FC /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		55030079CBD05A760B726BFD /* Pods-Lesson_26.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lesson_26.release.xcconfig"; path = "Target Support Files/Pods-Lesson_26/Pods-Lesson_26.release.xcconfig"; sourceTree = "<group>"; };
+		71AEC33C271DDE3C001EC019 /* Configuration.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = Configuration.yml; sourceTree = "<group>"; };
+		71AEC33F271DDECE001EC019 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		71F3422F271DD2FB004100FC /* Lesson_26.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lesson_26.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F34232271DD2FB004100FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71F34234271DD2FB004100FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +60,24 @@
 				E74830E95519629FC54763BC /* Pods-Lesson_26.debug.xcconfig */,
 				55030079CBD05A760B726BFD /* Pods-Lesson_26.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		71AEC33B271DDDDE001EC019 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				71AEC33C271DDE3C001EC019 /* Configuration.yml */,
+			);
+			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		71AEC33E271DDE8C001EC019 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				71F3423B271DD2FC004100FC /* Assets.xcassets */,
+				71AEC33F271DDECE001EC019 /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		71F34226271DD2FB004100FC = {
@@ -84,8 +104,9 @@
 				71F34232271DD2FB004100FC /* AppDelegate.swift */,
 				71F34234271DD2FB004100FC /* SceneDelegate.swift */,
 				71F34236271DD2FB004100FC /* ViewController.swift */,
+				71AEC33E271DDE8C001EC019 /* Resources */,
+				71AEC33B271DDDDE001EC019 /* SwiftGen */,
 				71F34238271DD2FB004100FC /* Main.storyboard */,
-				71F3423B271DD2FC004100FC /* Assets.xcassets */,
 				71F3423D271DD2FC004100FC /* LaunchScreen.storyboard */,
 				71F34240271DD2FC004100FC /* Info.plist */,
 			);
@@ -104,6 +125,7 @@
 				71F3422C271DD2FB004100FC /* Frameworks */,
 				71F3422D271DD2FB004100FC /* Resources */,
 				E6A7DB73D3E8CBAF404A9D26 /* [CP] Embed Pods Frameworks */,
+				71AEC33A271DDD0D001EC019 /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -152,7 +174,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71AEC340271DDECE001EC019 /* Localizable.strings in Resources */,
 				71F3423F271DD2FC004100FC /* LaunchScreen.storyboard in Resources */,
+				71AEC33D271DDE3C001EC019 /* Configuration.yml in Resources */,
 				71F3423C271DD2FC004100FC /* Assets.xcassets in Resources */,
 				71F3423A271DD2FB004100FC /* Main.storyboard in Resources */,
 			);
@@ -182,6 +206,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		71AEC33A271DDD0D001EC019 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#if which $PODS_ROOT/SwiftGen/bin/swiftgen >/dev/null; then\n    $PODS_ROOT/SwiftGen/bin/swiftgen config run --config \"$PROJECT_DIR/Lesson_26/SwiftGen/Configuration.yml\"\n    touch \"$PROJECT_DIR/Lesson_26/SwiftGen/Configuration.yml\"\n#else\n    #echo \"SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\n#fi\n";
 		};
 		E6A7DB73D3E8CBAF404A9D26 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

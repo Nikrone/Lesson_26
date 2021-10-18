@@ -1,16 +1,20 @@
 PODS:
   - MBProgressHUD (1.2.0)
+  - SwiftGen (6.5.1)
 
 DEPENDENCIES:
   - MBProgressHUD
+  - SwiftGen
 
 SPEC REPOS:
   trunk:
     - MBProgressHUD
+    - SwiftGen
 
 SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  SwiftGen: a6d22010845f08fe18fbdf3a07a8e380fd22e0ea
 
-PODFILE CHECKSUM: 1fd4d48ff09a24bda1797431cd89f22dc9bbce5f
+PODFILE CHECKSUM: c7a379a7e90b276c3fc0771e9f7a663afe64244d
 
 COCOAPODS: 1.11.2
