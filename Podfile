@@ -6,6 +6,8 @@ target 'Lesson_26' do
   use_frameworks!
   pod 'MBProgressHUD'
   pod 'SwiftGen'
+  pod 'SDWebImage'
+  pod 'Alamofire'
 
   # Pods for Lesson_26
 
